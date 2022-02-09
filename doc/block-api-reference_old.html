@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yollet Documents</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+	<style type="text/css">
+		p.text-lg{font-family: 'Rubik', sans-serif;}
+	</style>
+	
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      h4 {
+        display: inline;
+      }
+
+      p {
+        word-wrap: break-word;
+      }
+
+      .sidenav,
+      .content {
+        overflow-y: auto;
+        height: calc(100vh - 57px);
+        max-height: calc(100vh - 57px);
+      }
+
+      .sidenav {
+        padding: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: start;
+        align-items: stretch;
+        align-content: start
+      }
+
+      #toc {
+        overflow-y: auto;
+      }
+
+      .card {
+        margin-bottom: 15px;
+      }
+
+      .card-header {
+        cursor: pointer;
+      }
+
+      .content,
+      .card-block,
+      .search-form {
+        padding: 15px;
+      }
+
+      .nav-link {
+        color: #343a40 !important;
+      }
+
+      .nav-pills .nav-link.active,
+      .nav-pills .show > .nav-link {
+        color: #f8f9fa !important;
+        background-color: #343a40 !important;
+      }
+
+      .card.disabled, .nav-link.disabled {
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+
+  <body class="bg-light" style="font-family:Rubik">
+    <nav
+      class="navbar justify-content-start sticky-top border-bottom"
+	  style="background-color: #ffffff;height:48pt"
+    >
+      <a class="navbar-brand" href="http://www.yollet.net">
+		<img src="http://www.yollet.net/img/logo.png" height="30pt"></a>
+		<div style="font-family:Rubik; font-size:14pt;font-weight:500;letter-spacing:-0.8;">Documents</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+		<div class="col-1 bg-white border-left">
+			<nav id="toc">
+            <ul class="nav nav-pills flex-column">
+			  <li class="nav-item">
+                <a class="nav-link" style="font-size:14pt" href="#"><Strong>Block API</Strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-size:14pt"  href="#">Token API</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="content col-9" data-spy="scroll" data-target="#toc">
+          <div class="card border">
+            <div class="card-block">블록체인에 저장된 블록 및 트랜잭션 정보를 조회하기 위한 API 입니다.</div>
+          </div>
+
+          <div class="card method" id="block_getBlock">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#block_getBlock-content"
+            >
+              <h4>
+                <span>block.getBlock</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">block</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="block_getBlock-content">
+              <p>마지막 생성된 블록정보 가져오기</p>
+              
+              <p>마지막으로 생성된 블록정보의 전체 데이터를 가져옵니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>block api error</td>
+                          <td>block api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "block.getBlock",
+  "params": {}
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card method" id="block_getBlockNumber">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#block_getBlockNumber-content"
+            >
+              <h4>
+                <span>block.getBlockNumber</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">block</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="block_getBlockNumber-content">
+              <p>지정된 블록번호의 블록정보 가져오기</p>
+              
+              <p>지정된 블록번호의 블록정보 전체 데이터를 가져옵니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params.blockNumber</td>
+                          <td>long</td>
+                          <td></td>
+                          <td>가져올 블록의 블록번호</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>block api error</td>
+                          <td>block api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "block.getBlockNumber",
+  "params": {
+    "blockNumber": 100
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card method" id="block_getTransactionList">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#block_getTransactionList-content"
+            >
+              <h4>
+                <span>block.getTransactionList</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">block</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="block_getTransactionList-content">
+              <p>트랜잭션 목록 가져오기</p>
+              
+              <p>지정된 조건에 맞는 트랜잭션 목록 가져옵니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params.pageNumber</td>
+                          <td>integer</td>
+                          <td></td>
+                          <td>요청 페이지 번호, 1부터 시작</td>
+                        </tr>
+                        <tr>
+                          <td>params.pageSize</td>
+                          <td>integer</td>
+                          <td></td>
+                          <td>페이지당 목록 갯수</td>
+                        </tr>
+                        <tr>
+                          <td>params.order</td>
+                          <td>integer</td>
+                          <td></td>
+                          <td>목록 정렬 순서(생성시간) 0:desc, 1:asc</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>block api error</td>
+                          <td>block api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "block.getTransactionList",
+  "params": {
+    "pageNumber": 1,
+    "pageSize": 10,
+    "order": 0
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sidenav col-2 bg-white border-right">
+          <form class="search-form border-bottom" onsubmit="return false">
+            <input class="form-control search-input" type="search" placeholder="Search" />
+          </form>
+
+          <nav id="toc">
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#block_getBlock">block.getBlock</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#block_getBlockNumber">block.getBlockNumber</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#block_getTransactionList">block.getTransactionList</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+	  </div>
+    </div>
+
+    <script>
+      $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+        return function(elem) {
+          return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+        };
+      });
+
+      $(".search-input").on("paste keyup search", (event) => {
+        const inputValue = event.target.value;
+        
+        $(`a`).removeClass("disabled");
+
+        if(inputValue) {
+          $(`.card.method:contains("${inputValue}")`).removeClass("disabled");
+          $(`.card.method:contains("${inputValue}") .collapse`).collapse("show");
+          $(`.card.method:not(:contains("${inputValue}"))`).addClass("disabled");
+          $(`.card.method:not(:contains("${inputValue}")) .collapse`).collapse("hide");
+          $(`.card.method:not(:contains("${inputValue}"))`).each((index, element) => {
+           $(`a[href='#${element.id}']`).addClass("disabled");
+          });
+
+          document.querySelector('.card.method:not(.disabled)').scrollIntoView();
+        }
+        else {
+          $(".card.method").removeClass("disabled");
+          $(".card.method .collapse").collapse("show");
+        }
+      });
+    </script>
+  </body>
+</html>

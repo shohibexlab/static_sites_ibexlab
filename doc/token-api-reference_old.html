@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yollet Documents</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+	<style type="text/css">
+		p.text-lg{font-family: 'Poppins', sans-serif;}
+	</style>
+	
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      h4 {
+        display: inline;
+      }
+
+      p {
+        word-wrap: break-word;
+      }
+
+      .sidenav,
+      .content {
+        overflow-y: auto;
+        height: calc(100vh - 57px);
+        max-height: calc(100vh - 57px);
+      }
+
+      .sidenav {
+        padding: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: start;
+        align-items: stretch;
+        align-content: start
+      }
+
+      #toc {
+        overflow-y: auto;
+      }
+
+      .card {
+        margin-bottom: 15px;
+      }
+
+      .card-header {
+        cursor: pointer;
+      }
+
+      .content,
+      .card-block,
+      .search-form {
+        padding: 15px;
+      }
+
+      .nav-link {
+        color: #343a40 !important;
+      }
+
+      .nav-pills .nav-link.active,
+      .nav-pills .show > .nav-link {
+        color: #f8f9fa !important;
+        background-color: #343a40 !important;
+      }
+
+      .card.disabled, .nav-link.disabled {
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+
+  <body class="bg-light" style="font-family:Poppins">
+    <nav
+      class="navbar justify-content-start sticky-top border-bottom"
+	  style="background-color: #ffffff;height:48pt"
+    >
+      <a class="navbar-brand" href="http://www.yollet.net">
+		<img src="http://www.yollet.net/assets/logos/Logo.png"/ height="30pt"></a>
+		<div style="font-family:Poppins; font-size:14pt;font-weight:500;letter-spacing:-0.8;">Documents</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+		<div class="col-1 bg-white border-left">
+			<nav id="toc">
+            <ul class="nav nav-pills flex-column">
+			  <li class="nav-item">
+                <a class="nav-link" style="font-size:14pt" href="block-api-reference.html">Block API</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-size:14pt"  href=""><Strong>Token API</Strong></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="content col-9" data-spy="scroll" data-target="#toc">
+          <div class="card border">
+            <div class="card-block">Token 거래를 위한 API 입니다.</div>
+          </div>
+
+          <div class="card method" id="createAddress">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#createAddress-content"
+            >
+              <h4>
+                <span>createAddress</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">token</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="createAddress-content">
+              <p>신규 주소 생성</p>
+              
+              <p>생성된 키쌍중 공개키를 이용하여 신규 주소를 생성합니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params?.publicKey</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>공개키, pem encoding</td>
+                        </tr>
+                        <tr>
+                          <td>params?.addInfo</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>주소 정보</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.TransactionID</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>생성된 Transaction ID 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>token api error</td>
+                          <td>token api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "createAddress",
+  "params": {
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjJOMbYLUKdSg+RUyNpo7qM8WzpMW\njdCP/QeNmv0GHnc0t5fxz74s8mYb9qQXr8FcgcCNTwr4R94Uyah+GHh71g==\n-----END PUBLIC KEY-----",
+    "addInfo": "test address"
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "TransactionID": "e0ebfafe3df98d2e1fe6bfa60b6717d9cfb5c74173236f837b24d9fde3958f62",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card method" id="queryAddress">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#queryAddress-content"
+            >
+              <h4>
+                <span>queryAddress</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">token</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="queryAddress-content">
+              <p>주소 조회</p>
+              
+              <p>주소 정보를 조회합니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params?.address</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>address</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.TransactionID</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>생성된 Transaction ID 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>token api error</td>
+                          <td>token api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "queryAddress",
+  "params": {
+    "address": "7d5ef907d56e6511db192c620978a11444a7bc1d08e63e750212e280b8c309d5"
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "TransactionID": "e0ebfafe3df98d2e1fe6bfa60b6717d9cfb5c74173236f837b24d9fde3958f62",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card method" id="queryBalance">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#queryBalance-content"
+            >
+              <h4>
+                <span>queryBalance</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">token</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="queryBalance-content">
+              <p>전체 잔액 조회</p>
+              
+              <p>address 가 보유한 모든 token의 잔액 정보를 조회합니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params?.address</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>address</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.TransactionID</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>생성된 Transaction ID 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>token api error</td>
+                          <td>token api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "queryBalance",
+  "params": {
+    "address": "7d5ef907d56e6511db192c620978a11444a7bc1d08e63e750212e280b8c309d5"
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "TransactionID": "e0ebfafe3df98d2e1fe6bfa60b6717d9cfb5c74173236f837b24d9fde3958f62",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card method" id="queryBalanceByToken">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#queryBalanceByToken-content"
+            >
+              <h4>
+                <span>queryBalanceByToken</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">token</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="queryBalanceByToken-content">
+              <p>토큰 잔액 조회</p>
+              
+              <p>address 가 보유한 특정 token 의 잔액 정보를 조회합니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params?.address</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>address</td>
+                        </tr>
+                        <tr>
+                          <td>params?.tokenId</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>tokenId</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.TransactionID</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>생성된 Transaction ID 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>token api error</td>
+                          <td>token api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "queryBalanceByToken",
+  "params": {
+    "address": "7d5ef907d56e6511db192c620978a11444a7bc1d08e63e750212e280b8c309d5",
+    "tokenId": "ABC"
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "TransactionID": "e0ebfafe3df98d2e1fe6bfa60b6717d9cfb5c74173236f837b24d9fde3958f62",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card method" id="createToken">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#createToken-content"
+            >
+              <h4>
+                <span>createToken</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">token</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="createToken-content">
+              <p>신규 토큰 생성</p>
+              
+              <p>새로운 토큰을 생성합니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params?.owner</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>토큰 소유자의 address</td>
+                        </tr>
+                        <tr>
+                          <td>params?.tokenId</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>tokenId</td>
+                        </tr>
+                        <tr>
+                          <td>params?.tokenName</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>token 이름</td>
+                        </tr>
+                        <tr>
+                          <td>params?.totalSupply</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>발행수량 <decimal></td>
+                        </tr>
+                        <tr>
+                          <td>params?.decimalPoint</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>소수점아래 자릿수 <decimal></td>
+                        </tr>
+                        <tr>
+                          <td>params?.tempKey</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>임시키</td>
+                        </tr>
+                        <tr>
+                          <td>params?.signature</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>서명값 sign (owner + "|" + tokenId + "|" + tokenName + "|" + totalSupply + "|" + decimalPoint + "|" + tempKey) by owner's private key</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.TransactionID</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>생성된 Transaction ID 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>token api error</td>
+                          <td>token api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "createToken",
+  "params": {
+    "owner": "7d5ef907d56e6511db192c620978a11444a7bc1d08e63e750212e280b8c309d5",
+    "tokenId": "ABC",
+    "tokenName": "ABC 토큰",
+    "totalSupply": "10000",
+    "decimalPoint": "4",
+    "tempKey": "d2e54ee4d4b9a6056302fc05619d44d01ed23af12cd51c26fbd16f75711aa6e5",
+    "signature": "4"
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "TransactionID": "e0ebfafe3df98d2e1fe6bfa60b6717d9cfb5c74173236f837b24d9fde3958f62",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card method" id="increaseToken">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#increaseToken-content"
+            >
+              <h4>
+                <span>increaseToken</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">token</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="increaseToken-content">
+              <p>토큰 발행량 증가</p>
+              
+              <p>토큰 발행량을 증가시킵니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params?.tempKey</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>임시키</td>
+                        </tr>
+                        <tr>
+                          <td>params?.tokenId</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>tokenId</td>
+                        </tr>
+                        <tr>
+                          <td>params?.amount</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>증가수량 <decimal></td>
+                        </tr>
+                        <tr>
+                          <td>params?.signature</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>서명값 sign (tempKey + "|" + tokenId + "|" + amount) by owner's private key</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.TransactionID</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>생성된 Transaction ID 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>token api error</td>
+                          <td>token api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "increaseToken",
+  "params": {
+    "tempKey": "d2e54ee4d4b9a6056302fc05619d44d01ed23af12cd51c26fbd16f75711aa6e5",
+    "tokenId": "ABC",
+    "amount": "10000",
+    "signature": "4"
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "TransactionID": "e0ebfafe3df98d2e1fe6bfa60b6717d9cfb5c74173236f837b24d9fde3958f62",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card method" id="burnToken">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#burnToken-content"
+            >
+              <h4>
+                <span>burnToken</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">token</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="burnToken-content">
+              <p>토큰 발행량 감소</p>
+              
+              <p>토큰 발행량을 감소시킵니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params?.tempKey</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>임시키</td>
+                        </tr>
+                        <tr>
+                          <td>params?.tokenId</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>tokenId</td>
+                        </tr>
+                        <tr>
+                          <td>params?.amount</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>감소수량 <decimal></td>
+                        </tr>
+                        <tr>
+                          <td>params?.signature</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>서명값 sign (tempKey + "|" + tokenId + "|" + amount) by owner's private key</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.TransactionID</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>생성된 Transaction ID 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>token api error</td>
+                          <td>token api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "burnToken",
+  "params": {
+    "tempKey": "d2e54ee4d4b9a6056302fc05619d44d01ed23af12cd51c26fbd16f75711aa6e5",
+    "tokenId": "ABC",
+    "amount": "10000",
+    "signature": "4"
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "TransactionID": "e0ebfafe3df98d2e1fe6bfa60b6717d9cfb5c74173236f837b24d9fde3958f62",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card method" id="queryToken">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#queryToken-content"
+            >
+              <h4>
+                <span>queryToken</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">token</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="queryToken-content">
+              <p>토큰 정보 조회</p>
+              
+              <p>토큰 정보를 조회합니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params?.tokenId</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>조회하고자 하는 tokenId</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.TransactionID</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>생성된 Transaction ID 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>token api error</td>
+                          <td>token api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "queryToken",
+  "params": {
+    "tokenId": "ABC"
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "TransactionID": "e0ebfafe3df98d2e1fe6bfa60b6717d9cfb5c74173236f837b24d9fde3958f62",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card method" id="getTempKey">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#getTempKey-content"
+            >
+              <h4>
+                <span>getTempKey</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">token</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="getTempKey-content">
+              <p>임시키 생성</p>
+              
+              <p>토큰 생성/증가/감소, transfer 를 위한 임시키를 생성합니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params?.type</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>transfer, token 등 사용가능</td>
+                        </tr>
+                        <tr>
+                          <td>params?.address</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>해당 업무 서명자의 address</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.TransactionID</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>생성된 Transaction ID 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>token api error</td>
+                          <td>token api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "getTempKey",
+  "params": {
+    "type": "transfer",
+    "address": "7d5ef907d56e6511db192c620978a11444a7bc1d08e63e750212e280b8c309d5"
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "TransactionID": "e0ebfafe3df98d2e1fe6bfa60b6717d9cfb5c74173236f837b24d9fde3958f62",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card method" id="transfer">
+            <div
+              class="card-header text-light bg-dark"
+              data-toggle="collapse"
+              href="#transfer-content"
+            >
+              <h4>
+                <span>transfer</span>
+
+                <div class="float-right">
+                  <span class="badge badge-light">token</span>
+                </div>
+              </h4>
+            </div>
+
+            <div class="card-block collapse show" id="transfer-content">
+              <p>Transfer</p>
+              
+              <p>from 주소에서 to 주소로 지정된 토큰 수량만큼 이동시킵니다.</p>
+
+              <hr />
+
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-8 border-right">
+
+                    <h5>Parameters</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>params</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>params?.from</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>from address</td>
+                        </tr>
+                        <tr>
+                          <td>params?.tokenId</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>tokenId</td>
+                        </tr>
+                        <tr>
+                          <td>params?.to</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>to address</td>
+                        </tr>
+                        <tr>
+                          <td>params?.amount</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>transfer 수량 <decimal></td>
+                        </tr>
+                        <tr>
+                          <td>params?.comment</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>적요</td>
+                        </tr>
+                        <tr>
+                          <td>params?.tempKey</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>임시키</td>
+                        </tr>
+                        <tr>
+                          <td>params?.signature</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>서명값 sign ( from | tokenId | to | amount | tempKey ) by from's private key</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Result</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Constraints</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>result</td>
+                          <td>object</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>result.resultCode</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultMessage</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 코드에 따른 메시지</td>
+                        </tr>
+                        <tr>
+                          <td>result.TransactionID</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>생성된 Transaction ID 정보</td>
+                        </tr>
+                        <tr>
+                          <td>result.resultData</td>
+                          <td>string</td>
+                          <td></td>
+                          <td>결과 데이터</td>
+                        </tr>
+                      </table>
+                    </div>
+                    
+                    <h5>Errors</h5>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover table-sm">
+                        <tr>
+                          <th>Code</th>
+                          <th>Message</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>-32000</td>
+                          <td>token api error</td>
+                          <td>token api error</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </div>
+
+                  <div class="col-4">
+                    <h5>Request example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "method": "transfer",
+  "params": {
+    "from": "7d5ef907d56e6511db192c620978a11444a7bc1d08e63e750212e280b8c309d5",
+    "tokenId": "ABC",
+    "to": "7e0623ae11e201bc66a6978c0040f646fd57faaaa7cec805174f0d1bb73197a8",
+    "amount": "10000",
+    "comment": "test comment",
+    "tempKey": "d2e54ee4d4b9a6056302fc05619d44d01ed23af12cd51c26fbd16f75711aa6e5",
+    "signature": "4"
+  }
+}</pre>
+
+                    <h5>Response example</h5>
+                    <pre class="bg-light">{
+  "jsonrpc": "2.0",
+  "id": "1234567890",
+  "result": {
+    "resultCode": "200",
+    "resultMessage": "Success",
+    "TransactionID": "e0ebfafe3df98d2e1fe6bfa60b6717d9cfb5c74173236f837b24d9fde3958f62",
+    "resultData": ""
+  }
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sidenav col-2 bg-white border-right">
+          <form class="search-form border-bottom" onsubmit="return false">
+            <input class="form-control search-input" type="search" placeholder="Search" />
+          </form>
+
+          <nav id="toc">
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#createAddress">createAddress</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#queryAddress">queryAddress</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#queryBalance">queryBalance</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#queryBalanceByToken">queryBalanceByToken</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#createToken">createToken</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#increaseToken">increaseToken</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#burnToken">burnToken</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#queryToken">queryToken</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#getTempKey">getTempKey</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#transfer">transfer</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+	  </div>
+    </div>
+
+    <script>
+      $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+        return function(elem) {
+          return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+        };
+      });
+
+      $(".search-input").on("paste keyup search", (event) => {
+        const inputValue = event.target.value;
+        
+        $(`a`).removeClass("disabled");
+
+        if(inputValue) {
+          $(`.card.method:contains("${inputValue}")`).removeClass("disabled");
+          $(`.card.method:contains("${inputValue}") .collapse`).collapse("show");
+          $(`.card.method:not(:contains("${inputValue}"))`).addClass("disabled");
+          $(`.card.method:not(:contains("${inputValue}")) .collapse`).collapse("hide");
+          $(`.card.method:not(:contains("${inputValue}"))`).each((index, element) => {
+           $(`a[href='#${element.id}']`).addClass("disabled");
+          });
+
+          document.querySelector('.card.method:not(.disabled)').scrollIntoView();
+        }
+        else {
+          $(".card.method").removeClass("disabled");
+          $(".card.method .collapse").collapse("show");
+        }
+      });
+    </script>
+  </body>
+</html>
