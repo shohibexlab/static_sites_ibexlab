@@ -13,6 +13,9 @@ class MyDocument extends Document {
       href="/favicon.png"
       type="image/x-icon"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400&display=swap" rel="stylesheet"></link>
     {/* Title Name can be changed through here */}
     <title>Yoshop</title>
         </Head>
