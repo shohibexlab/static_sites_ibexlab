@@ -12,7 +12,7 @@ class MyDocument extends Document {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href={PAGE_FAVICON}  
+      href={"./"+PAGE_FAVICON+".png"}  
       type="image/x-icon"
     />
     {/* Title Name can be changed through here */}
