@@ -2,6 +2,7 @@
     import Document, { Html, Head, Main, NextScript } from 'next/document'
 class MyDocument extends Document {
   render() {
+    const PAGE_TITLE = process.env.PAGE_TITLE;
     return (
       <Html>
         <Head>
@@ -14,7 +15,7 @@ class MyDocument extends Document {
       type="image/x-icon"
     />
     {/* Title Name can be changed through here */}
-    <title>Vixco</title>
+    <title>{PAGE_TITLE}</title>
         </Head>
         <body style={{"overflowX": "hidden","overflowY": "hidden"}}>
           <Main />
