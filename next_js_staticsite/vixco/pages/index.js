@@ -1,5 +1,6 @@
 export default function STATIC() {
   console.log('STATICSTATICSTATICSTATICSTATIC11111' + process.env.STATIC);
+  console.log('STATICSTATICSTATICSTATICSTATIC11111' + process.env.DBNAME);
 
   return (
     <div style={{height: "100vh"}}>
