@@ -9,3 +9,7 @@ PAGE_TITLE is title for the page!
 PAGE_FAVICON cconsists of 3 values => faviconVixco / faviconYollet / faviconYoshop
 
 https://github.com/shohibexlab/static_sites_ibexlab
+
+ VIXCO => https://shohibexlab.github.io/static_sites_ibexlab/vixco_net/
+ YOLLET => https://shohibexlab.github.io/static_sites_ibexlab/yollet_net/
+ YOSHOP => https://shohibexlab.github.io/static_sites_ibexlab/yoshop_kz/www.yoshop.kz/ko/
