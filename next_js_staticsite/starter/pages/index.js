@@ -1,5 +1,6 @@
 export default function STATIC() {
 const DOMAIN_NAME = process.env.DOMAIN_NAME;
+print(DOMAIN_NAME)
   return (
     <div style={{height: "100vh"}}>
       <iframe src={DOMAIN_NAME}
