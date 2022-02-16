@@ -1,0 +1,50 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.textStyle {
+    padding-left: 60px;
+    padding-right: 60px;
+    font-size: 24px;
+    line-height: 2.2;
+    .headerText {
+        font-size: 44px;
+        text-align: center;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .textStyle {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 18px;
+        line-height: 2.2;
+        padding-bottom: 0;
+        .headerText {
+            font-size: 22px;
+            text-align: center;
+            font-weight: 600;
+        }
+    }
+}
+
+.buttonStyle {
+    font-weight: 500;
+    background-color: #f1f5f9;
+    color: #4b5563;
+    border-radius: 24px;
+    width: 50;
+    text-align: center;
+    right: 10;
+    align-self: end;
+    margin-right: 50px;
+    padding: 23px 45px;
+    font-size: 32px;
+    :hover {
+        cursor: pointer;
+    }
+    @media screen and (max-width: 600px) {
+        font-size: 22px;
+        padding: 14px 32px;
+        border-radius: 12px;
+    }
+}
